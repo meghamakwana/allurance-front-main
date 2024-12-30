@@ -1,0 +1,12 @@
+{
+    "Register" : [
+        {
+           "LoginImg" : "/img/login-bg.png",
+           "CreateAnAccount" : "Create an Account :)",
+           "Title" : "Sign up to access all the amazing features!",
+           "ForgotPassword" : "forgot password?",
+           "Login" : "login",
+           "Register" : "register"
+        }
+    ]
+}

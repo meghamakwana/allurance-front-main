@@ -1,0 +1,48 @@
+{
+    "Checkout" : [
+        {
+           "BillingDetails" : "Billing Details",
+           "SelectAddress" : "Select Address",
+           "SelectCountry" : "Select Country",
+           "India" : "India",
+           "USA" : "USA",
+           "UK" : "UK",
+           "AdditionalInformation" : "Additional Information",
+           "OrderNotes" : "Order Notes",
+           "YourOrder" : "Your Order",
+           "Product" : "Product",
+           "Total" : "Total",
+           "ClassyRoundDiamondRing" : "Classy Round Diamond Ring",
+           "FiveThousand" : "₹ 5000",
+           "Discount" : "Discount",
+           "FiveHundred" : "₹ 500",
+           "Shipping" : "Shipping",
+           "FreeShipping" : "Free Shipping",
+           "YourTotalSavings" : "Your Total Savings",
+           "FourFive" : "₹ 4500",
+           "PlaceOrder" : "Place Order",
+           "HaveAnyQueries" : "Have Any Queries ? Contact Us For Your Assistance",
+           "CallUs" : "call us at",
+           "Number" : "+91 1234567890",
+           "Or" : "Or",
+           "ChatWith" : "Chat With Us",
+
+
+
+           "AddNewAddress" : "Add New Address",
+           "Work" : "Work",
+           "Office" : "Office",
+           "Other" : "Other",
+           "SelectCityState" : "Select City/State",
+           "NewYork" : "New York, NY",
+           "LosAngeles" : "Los Angeles, CA",
+           "Chicago" : "Chicago, IL",
+           "Afghanistan" : "Afghanistan",
+           "ÅlandIslands" : "Åland Islands",
+           "Albania" : "Albania",
+           "Title" : "use this address as default",
+           "Cancel" : "cancel",
+           "DeliverToThisAddress" : "Deliver to this address"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "Address" : [
+        {
+           "RohanMehra" : "Rohan Mehra",
+           "ManageAddress" : "manage address",
+           "PlusIcon" : "bi bi-plus",
+           "AddNewText" : "+ Add New",
+           "WorkText" : "work",
+           "IconEllipsisVertical" : "fa-solid ",
+           "Edit" : "Edit",
+           "Delete" : "Delete",
+           "Address" : "311, Kalp industrial park, near KIA showroom, Nikol Ring road,Kathwada, Nikol, Ahmedabad, Gujarat",
+           "Number" : "382350",
+    
+    
+           "AddNewAddress" : "Add New Address",
+           "Work" : "Work",
+           "Office" : "Office",
+           "Other" : "Other",
+           "SelectCityState" : "Select City/State",
+           "NewYork" : "New York, NY",
+           "LosAngeles" : "Los Angeles, CA",
+           "Chicago" : "Chicago, IL",
+           "SelectCountry" : "Select Country",
+           "Afghanistan" : "Afghanistan",
+           "ÅlandIslands" : "Åland Islands",
+           "Albania" : "Albania",
+           "Title" : "use this address as default",
+           "Cancel" : "cancel",
+           "DeliverToThisAddress" : "Deliver to this address"
+          
+        }
+    ]
+}

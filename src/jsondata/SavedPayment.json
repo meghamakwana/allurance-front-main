@@ -1,0 +1,10 @@
+{
+    "SavedPayment" : [
+        {
+           "ManageSavedCards" : "Manage Saved Cards",
+           "AxisBankCreditCard" : "Axis Bank Credit Card",
+           "AccountNumber" : "* * * * * * * * * * * * 1 2 3 4",
+           "TrashIcon" : "fa-solid fa-trash"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "Blog" : [
+        {
+            "BannerImg" : "/img/news-banner.png" ,
+            "Blog" : "Blog",
+            "OneEight" : "18",
+            "June" : "June",
+            "FriendsIcon" : "fas fa-user-friends",
+            "Admin" : "Admin",
+            "CommentsIcon" : "fa fa-comments-o",
+            "Comments" : "Comments",
+            "CountryToPopular" : "Country to popular belife",
+            "Paraphrase" : "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything",
+            "ReadMore" : "Read More",
+            "OptionOne" : "1",
+            "OptionTwo" : "2", 
+            "GreaterThanSymbol" : "/img/greater-than-symbol.png",
+            "RecentPosts" : "Recent Posts",
+            "Date" : "March 7,2024",
+            "Details" : "There are many variations of passages of Lorem Ipsum",
+            "RecentPostImgOne" : "/img/recent-post-1.png",
+            "RecentPostImgTwo" : "/img/recent-post-2.png",
+            "RecentPostImgThree" : "/img/recent-post-3.png",
+            "RecentPostImgFour" : "/img/recent-post-4.png"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "PopularCategories" : [
+        {
+            "PopularText" : "Popular",
+            "CategoriesText" : "Categories",
+            "Line" : "line",
+            "ViewAllText" : "View All",
+            "GreaterThanSymbolIImg" : "/img/greater-than-symbol.png",
+            "ViewAllLine" : "view-all-border",
+            "NecklacesText" : "NECKLACES",
+            "PopularImg" : "/img/popular-img-1.png",
+            "PopularImgTwo" : "/img/popular-img-2.png",
+            "PopularImgThree" : "/img/popular-img-3.png",
+            "PopularImgFour" : "/img/popular-img-4.png",
+            "PopularImgFive" : "/img/popular-img-5.png",
+            "PopularImgSix" : "/img/popular-img-6.png"
+        }
+    ]
+}

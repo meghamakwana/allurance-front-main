@@ -1,0 +1,17 @@
+{
+    "NewLaunches" : [
+        {
+            "NewText" : "New",
+            "LaunchesText" : "Launches",
+            "LaunchesTextLine" : "line ms-3",
+            "NewLaunchImgOne" : "/img/new-launch-1.png",
+            "NewLaunchImgFour" : "/img/new-launch-4.png",
+            "NewLaunchImgTwo" : "/img/new-launch-2.png",
+            "NewLaunchImgThree" : "/img/new-launch-3.png",
+            "EarringsText" : "Earrings",
+            "NecklaceText" : "Necklace",
+            "RingsText" : "rings",
+            "BraclatesText" : "BRACLATES"
+        }
+    ]
+}

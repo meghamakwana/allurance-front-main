@@ -1,0 +1,16 @@
+{
+    "Slider": [
+        {
+          "Btn" : "SHOP NOW" ,
+          "SlideOneText" : " Introducing the" ,
+          "SlideOneText2" : "lost day Collection",
+          "SlideOneImg" : "/img/slider1.png",
+          "SlideTwoText" : " A Minimilistic" ,
+          "SlideTwoText2" : "Design Masculine",
+          "SlideTwoImg" : "/img/slider2.png",
+          "SlideThreeText" : " A New Amazing",
+          "SlideThreeText3" : "Collection",
+          "SlideThreeImg" : "/img/slider3.png"
+        }
+      ]
+}

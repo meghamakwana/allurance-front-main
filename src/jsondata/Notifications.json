@@ -1,0 +1,10 @@
+{
+    "Notifications" : [
+        {
+           "OrderEmails" : "Order Related Updates via Emails",
+           "NewOrder" : "new order email",
+           "OrderShippling" : "order shipping email",
+           "OrderDelivery" : "order delivery email"
+        }
+    ]
+}

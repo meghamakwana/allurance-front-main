@@ -1,0 +1,11 @@
+{
+    "Categories" : [
+        {
+           "Categories" : "Categories",
+           "imgHover" : "/img/popular-img-1.png",
+           "imgOut" : "/img/popular-img-2.png",
+           "Title" : "NECKLACES",
+           "BreadcrumbImg" : "/img/category-breadcrumb.png"
+        }
+    ]
+}

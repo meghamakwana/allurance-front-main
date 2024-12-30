@@ -1,0 +1,29 @@
+{
+    "ProfileListView" : [
+        {
+           "Img" : "/img/profile-img.png",
+           "RohanMehra" : "Rohan Mehra",
+           "PurchaseImg" : "/img/my-purchase.png",
+           "MyPurchaseText" : "My Purchase",
+           "AccountImg" : "/img/my-account.png",
+           "MyAccountText" : "My Account",
+           "ProfileInformationText" : "Profile Information",
+           "ManageAddressText" : "Manage Address",
+           "ReferText" : "Refer",
+           "EarnText" : "Earn",
+           "CardImg" : "/img/card.png",
+           "PaymentsText" : "Payments",
+           "GiftCardText" : "Gift Card",
+           "SavePaymentOptions" : "Save Payment Options",
+           "StuffImg" : "/img/my-stuff.png",
+           "MyStuff" : "My Stuff",
+           "MyCoupons" : "my coupons",
+           "CommunicationPreference" : "communication preference",
+           "MyWishlist" : "my wishlist",
+           "MyReviews" : "my reviews",
+           "Ratings" : "ratings",
+           "LogoutImg" : "/img/logout.png",
+           "LogoutText" : "logout"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "ShopWith" : [
+        {
+            "ShopWithText" : "Shop With",
+            "AlluranceLifestyleText" : "Allurance Lifestyle",
+            "BestsellersTextLine" : "line",
+            "ViewAllText" : "View All",
+            "ViewAllLine" : "view-all-border",
+            "GreaterThanSymbolIImg" : "/img/greater-than-symbol.png",
+            "ProductListImgOne" : "/img/product-list-img-1.png",
+            "ProductListImgFour" : "/img/product-list-img-4.png",
+            "ProductListImgThree" : "/img/product-list-img-3.png",
+            "HeartImg" : "/img/heart.png",
+            "ShoppBagImg" : "/img/shopp-bag.png",
+            "QuickViewText" : "Quick View",
+            "EyeIcon" : "fa-regular fa-eye",
+            "StarIcon" : "fa-solid fa-star",
+            "DiamondRingText" : "Classy Round Diamond Ring",
+            "RupeeSignIcon" : "fa-solid fa-indian-rupee-sign",
+            "FRupees" : "5000",
+            "ERupees" : "8000",
+            "Off" : "15% off",
+
+            "PopupImgOne" : "/img/popup-img1.jpg",
+            "PopupImgTwo" : "/img/popup-img2.jpg",
+            "PopupImgThree" : "/img/popup-img3.jpg",
+            "PopupImgFour" : "/img/popup-img4.jpg",
+            "WhatIsThePoint" : "What is the point of this.",
+            "LightweightDiamondRing" : "Lightweight Diamond Ring",
+            "ViewMore" : "View More",
+            "AddToCart" : "add to cart",
+            "Minus" : "-",
+            "Plus" : "+",
+            "CategoriesDiamondRing" : "categories : diamond ring",
+            "Paragraph" : " Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit m nisi ut aliquid ex ea d minima veniam quis nostrum"
+        }
+    ]
+}

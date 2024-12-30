@@ -1,0 +1,40 @@
+{
+    "OrderTrack" : [
+        {
+            "DeliveryAddress" : "delivery address",
+            "RohanMehra" : "rohan mehra",
+            "Address" : "340, Atmaram Bldg, Thakurdwar, J.s.s. Rd, Kalbadevi Mumbai,",
+            "PinCode" : "Maharashtra, 400002",
+            "Number" : "1234567890",
+            "NumberIcon" : "fa-solid fa-phone",
+            "NeedHelp" : "need help",
+            "QuestionIcon" : "fa-solid fa-question",
+            "OrderId" : "order id :",
+            "OrderDate" : "order Date:",
+            "PaymentId" : "payment id:",
+            "TransactionId" : "transaction id:",
+            "PaymentStatus" : "payment status:",
+            "IdNumber" : "0D30227689076543",
+            "Date" : "27-02-2024",
+            "HideNumber" : "**** **** **** 1234",
+            "PaymentSuccessful" : "payment successful",
+            "DownloadInvoice" : "Download Invoice",
+            "ArrowDownIcon" : "fa-solid fa-file-arrow-down",
+            "WriteReview" : "Write Review",
+            "PenIcon" : "fa-solid fa-pen",
+    
+    
+            "OrderImg" : "/img/order-track-img.png",
+            "ClassyDiamondRing" : "classy diamond ring",
+            "Seller" : "seller: allurance",
+            "Placed" : "placed",
+            "PlacedDate" : "27th feb 2024",
+            "Time" : "3:00 pm",
+            "Packed" : "packed",
+            "Shipped" : "shipped",
+            "Delivered" : "delivered",
+            "ExpectedBy" : "expected by",
+            "ExpectedDate" : "4 mar, 2024"
+        }
+    ]
+}

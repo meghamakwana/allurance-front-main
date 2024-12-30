@@ -1,0 +1,17 @@
+{
+    "Wishlist" : [
+        {
+            "ProductListImgOne" : "/img/product-list-img-1.png",
+            "HeartImg" : "/img/fld-heart.png",
+            "AddToCart" : "Add To Cart",
+            "ProductListImgTwo" : "/img/product-list-img-2.png",
+            "ProductListImgThree" : "/img/product-list-img-3.png",
+            "StarIcon" : "fa-solid fa-star",
+            "DiamondRingText" : "Classy Round Diamond Ring",
+            "RupeeSignIcon" : "fa-solid fa-indian-rupee-sign",
+            "FRupees" : "5000",
+            "ERupees" : "8000",
+            "Off" : "15% off"
+        }
+    ]
+}

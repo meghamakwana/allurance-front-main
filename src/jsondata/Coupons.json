@@ -1,0 +1,24 @@
+{
+    "Coupons" : [
+        {
+           "AvailableCoupons" : "Available Coupons",
+           "UpcomingCoupons" : "Upcoming Coupons",
+           "ExpiredCoupons" : "Expired",
+           "GetExtraOffTitle" : "Get extra 25% off",
+           "GetExtraOffText" : "Get extra 25% off on 3 items (price inclusive of cashback ",
+           "GetExtraOffTextTwo" : "coupons)",
+           "T" : "T",
+           "C" : "C",
+           "ValidTillDate" : "Valid till 25th May, 2024",
+           "ViewMore" : "View More",
+    
+           "CouponCode" : "Coupon Code",
+           "GetOff" : "Get 25% Off",
+           "CopyTheCouponCode" : "Copy the coupon code",
+           "UseIt" : "use it",
+           "Off" : "25OFF",
+            "CopyThisCouponCode" : "copy this coupon code",
+            "Continue" : "Continue"
+        }
+    ]
+}

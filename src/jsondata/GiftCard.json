@@ -1,0 +1,19 @@
+{
+    "GiftCard" : [
+        {
+           "AlluranceGiftCard" : "Allurance Gift Card",
+           "BuyGiftCard" : "Buy Gift Card",
+           "CheckGiftCardBalance" : "Check Gift Card Balance",
+           "AddGiftCard" : "+ Add gift card",
+           "DateOfAdding" : "Date of adding",
+           "DateIfUse" : "Date if Use",
+           "OrderId" : "Order ID",
+           "SaveText" : "Save",
+           "AmountPriceText" : "₹ 0",
+           "DataOne" : "Data 1",
+            "DataTwo" : "Data  2",
+            "DataThree" : "Data 3",
+            "GiftCardImg" : "/img/gift-card.png"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "EarnRefer" : [
+        {
+           "ReferText" : "Refer",
+           "EarnText" : "Earn",
+           "ManageAddress" : "manage address",
+           "ReferEarnImg" : "/img/refer-earn.png",
+           "TotalAmountText" : "TOTAL AMOUNT EARNED",
+           "AmountPriceText" : "₹ 0",
+           "NoteText" : "Note: this amount will be credited in your wallet",
+           "ShareLinkTitleText" : "Share your referral link",
+           "ShareLinkDetailText" : "You can share your referral link by copying and sharing it or by sharing it on your social media",
+           "Url" : "https://example.com/referral-link",
+           "CopyLinkText" : "Copy Link",
+           "Or" : "OR",
+           "ColumnOne" : "Column 1",
+           "ColumnTwo" : "Column 2",
+           "ColumnThree" : "Column 3",
+           "DataOne" : "Data 1",
+           "DataTwo" : "Data 2",
+           "DataThree" : "Data 3"
+        }
+    ]
+}

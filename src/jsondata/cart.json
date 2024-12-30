@@ -1,0 +1,57 @@
+{
+    "cart" : [
+    {
+        "BagImg" : "/img/my-bag-bg-2.png",
+        "MyBag" : "My Bag",
+        "Product" : "Product ",
+        "Price" : "Price",
+        "Qty" : "Qty",
+        "Total" : "Total",
+        "ClassyRoundDiamondRing" : "Classy Round Diamond Ring",
+        "Rupee" : "₹ 5000",
+        "Minus" : "-",
+        "Plus" : "+",
+        "FiveThousand" : "5000",
+        "ContinueShopping" : "Continue Shopping",
+        "ClearShoppingCart" : "Clear Shopping Cart",
+        "DiliverTo" : "Diliver To ",
+        "ABCD" : "ABCD XYDS, 123456 ",
+        "OnThurday" : "On Thursday 04",
+        "SarangStreet" : "Sarang Street, Mandvi, Maharastra...",
+        "Change" : "Change",
+        "EnterCode" : "EnterCode",
+        "CheckOffers" : "Check Offers",
+        "Apply" : "Apply",
+        "ORDERSUMMARY" : "ORDER SUMMARY",
+        "SubTotal" : "Sub Total",
+        "Discount" : "Discount",
+        "FiveHundred" : "₹ 500",
+        "Delivery" : "Delivery",
+        "Free" : "Free",
+        "ProceedToNext" : "Proceed To Next",
+        "HaveAnyQueriesText" : "Have Any Queries ? Contact Us For Your Assistance",
+        "CallUsAt" : "call us at",
+        "Number" : "+91 1234567890",
+        "Or" : "Or",
+        "ChatWithUs" : "Chat With Us",
+
+
+
+        "LoginPopupImg" : "/img/login-popup.png",
+        "Login" : "Login",
+        "ToEnjoyText" : "To enjoy a seamless experience while shopping",
+        "OR" : "OR",
+        "LoginUsingGoogle" : "LOGIN USING GOOGLE",
+        "DoYouHaveAnAccount" : "Do You Have An Account?",
+        "SignUp" : "SIGN UP",
+
+
+        "Address" : "Address",
+        "ABCDXYDS" : "ABCD XYDS, 123456",
+        "Lorem" : "Lorem ipsum dolor sit amet....",
+        "Thursday" : "Thursday 04",
+        "Adrss" : "Address",
+        "Addrss" : "Address"
+    }
+]
+}

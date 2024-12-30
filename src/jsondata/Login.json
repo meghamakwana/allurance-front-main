@@ -1,0 +1,12 @@
+{
+    "Login" : [
+        {
+           "LoginImg" : "/img/login-bg.png",
+           "WelcomeBack" : "hi, welcome back :)",
+           "Title" : "to keep connected with us login with your personal information by email address and password",
+           "Register" : "Register?",
+           "Login" : "login",
+           "ForgotPassword" : "forgot password?"
+        }
+    ]
+}

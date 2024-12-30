@@ -1,0 +1,15 @@
+{
+    "Profile" : [
+        {
+           "PersonalInformation" : "personal information",
+           "AvtarImg" : "/img/avtar.png",
+           "MaleText" : "Male",
+           "FemaleText" : "Female",
+           "ContactDetailsText" : "contact details",
+           "DeactivateAccountText" : "Deactivate account",
+           "CancelText" : "cancel",
+           "SaveText" : "Save",
+           "AmountPriceText" : "₹ 0"
+        }
+    ]
+}

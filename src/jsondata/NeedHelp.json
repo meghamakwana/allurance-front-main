@@ -1,0 +1,22 @@
+{
+    "NeedHelp" : [
+        {
+            "LetsGetYou" : "Let's get you",
+            "SomeHelp" : "some help!",
+            "HaveAnyIssue" : "Have any issue? Send us an ",
+            "Email" : "email.",
+            "OnboardingImg" : "https://i.ibb.co/bWfN3Qy/undraw-onboarding-o8mv-1.png",
+            "WhatListAre" : "What list are you looking for ?",
+            "PleaseFewPrimaryTags" : "Please Few Primary Tags ?",
+            "PleaseDesribeYourListNeeds" : "Please desribe your list needs ?",
+            "SelectCategory" : "Select Category",
+            "OptionOne" : "1",
+            "OptionTwo" : "2",
+            "OptionThree" : "3",
+            "OptionFour" : "4",
+            "OptionFive" : "5",
+            "Submit" : "Submit",
+            "RightArrowIcon" : "fas fa-long-arrow-alt-right"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "Header": [
+        {
+          "Logo" : "/img/logo.png" ,
+          "Categories" : "Categories", 
+          "Icon" : "fas fa-angle-down rotate-icon",
+          "CategoriesView" : "View More",
+          "IconImg" : "/img/next.png",
+          "Home" : "Home",
+          "Products" : "Products",
+          "Contact" : "Contact us",
+          "Blog" : "Blog",
+          "Cart" : "/img/shopping-cart.png",
+          "User" : "/img/user.png",
+          "CatImgTwo" : "/img/cat-2.png",
+          "CatImgThree" : "/img/cat-3.png",
+          "CatImgFour" : "/img/cat-4.png",
+          "CatImgFive" : "/img/cat-5.png",
+          "DropDownImg" : "/img/drop-down-img.png",      
+          "Login" : "Login"    
+        }
+      ]
+}

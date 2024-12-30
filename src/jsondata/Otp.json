@@ -1,0 +1,11 @@
+{
+    "Otp" : [
+        {
+           "LoginImg" : "/img/login-bg.png",
+           "Otp" : "OTP",
+           "Title" : "Secure access: Enter your OTP for verification",
+           "BackToLogin" : "Back To Login?",
+           "Submit" : "Submit"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "MyPurchase" : [
+        {
+            "MyAccount" : "My Account",
+            "MyPurchases" : "My Purchases",
+            "OfflinePurchase" : "Offline Purchase",
+            "OnlineOrder" : "Online Order",
+            "PurchaseImg" : "/img/my-purchase-img.png",
+            "ClassyRoundDiamondRing" : "classy round diamond ring",
+            "Seller" : "seller: allurance",
+            "Rupee" : "₹4500",
+            "YourOrderPlaced" : "your order has been placed",
+            "YourOrderDelivred" : "your order has been delivred on",
+            "Date" : "3 march 2024",
+    
+            "Number" : "1234567890987654321",
+            "NeedHelp" : "need help",
+            "TrackOrder" : "track order",
+            "QuestionIcon" : "fa-solid fa-question",
+            "ListIcon" : "fa-solid fa-list",
+            "DeliveryExpected" : "delivery expected by sun, 3 march 2024"
+        }
+    ]
+}

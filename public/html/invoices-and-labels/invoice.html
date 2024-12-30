@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allurance | Order Invoice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            size: A4;
+            margin: 20mm;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .invoice-page .invoice-box {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            font-size: 14px;
+            line-height: 24px;
+            color: #555;
+            border-bottom: 10px solid #8F0D17;
+        }
+
+        .invoice-page .header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .invoice-page .header .logo {
+            width: 150px;
+        }
+
+        .invoice-page .header .address h2 {
+            text-align: left;
+        }
+
+        .invoice-page .header .address {
+            text-transform: uppercase;
+            COLOR: #000;
+            text-align: right;
+        }
+
+        .invoice-page .header P {
+            TEXT-ALIGN: LEFT;
+            margin: 0;
+        }
+
+        .invoice-page .heading {
+            justify-content: center;
+            margin: 20px 0 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .invoice-page .heading .left-border,
+        .invoice-page .heading .right-border {
+            flex: 1;
+            border-top: 25px solid #F0DBDD;
+            height: 2px;
+        }
+
+        .left-radius {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .right-radius {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .invoice-page .heading .title {
+            color: #000;
+            padding: 0 10px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .invoice-page .columns {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .invoice-page .column {
+            text-transform: capitalize;
+            /* padding-left: 60px; */
+            width: 48%;
+        }
+
+        .invoice-page .column h3 {
+            color: #000;
+            margin-bottom: 0;
+        }
+
+        .invoice-page .column p {
+            text-transform: capitalize;
+            margin: 0;
+        }
+
+        .invoice-page table {
+            margin-top: 16px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .invoice-page th,
+        td {
+
+            border: none;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .invoice-page th {
+            padding: 5px 0 0 30px;
+            text-align: left;
+            border: none;
+            background-color: #8F0D17;
+        }
+
+        .invoice-page td {
+            padding: 0 0 0 30px;
+        }
+
+        .invoice-page th span {
+            font-weight: 100;
+            font-size: 11px;
+        }
+
+        .invoice-page thead {
+            text-transform: capitalize;
+            color: #fff;
+        }
+
+        .invoice-page .description {
+            width: 40%;
+        }
+
+        .invoice-page .table-container td span {
+            font-weight: bold;
+            color: #1f1f1f;
+        }
+
+        .invoice-page .border-bottom-dashed {
+            border-bottom: 3px dashed #000;
+        }
+
+        .invoice-page .qrcode {
+
+            width: 120px;
+        }
+
+        .invoice-page .qr-section {
+            margin-right: -50px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .invoice-page .footer-p {
+            text-align: center;
+            padding: 0 150px;
+        }
+
+        .invoice-page .fa-indian-rupee-sign {
+            padding-right: 5px;
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .invoice-page .bold-text {
+            font-size: 17px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .invoice-page .code {
+            margin-top: -20px;
+        }
+
+        .invoice-page .position-text {
+            color: #8F0D17;
+            font-size: 16px;
+            transform: rotate(-90deg);
+            bottom: 32px;
+            right: -30px;
+            position: absolute;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* without bg */
+        .invoice-page .invoice-box-2 {
+            position: relative;
+
+            max-width: 800px;
+            margin: auto;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            font-size: 14px;
+            line-height: 24px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-page">
+        <div class="invoice-box" style="background-image: url({{invoice_bg}});">
+            <div class="header">
+                <div class="logo">
+                    <img src={{company_logo}} alt="Logo">
+                </div>
+                <div class="address">
+                    <h2>{{company_name}}</h2>
+                    <p>{{company_address}}</p>
+                    <p>CIN: {{company_cin}}</p>
+                    <p>GSTIN: {{company_gstno}}</p>
+                </div>
+            </div>
+            <div class="heading">
+                <div class="left-border"></div>
+                <div class="title"> TAX INVOICE</div>
+                <div class="right-border"></div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <h3>Invoice Details</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                        <tr>
+                            <td style="padding:0 8px; font-weight: bold;">Order ID</td>
+                            <td style="padding:0 8px;">: {{order_id}}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 8px; font-weight: bold;">Invoice Date</td>
+                            <td style="padding:0 8px;">: {{invoice_date}}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 8px; font-weight: bold;">Invoice Number</td>
+                            <td style="padding:0 8px;">: {{invoice_number}}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 8px; font-weight: bold;">Customer ID</td>
+                            <td style="padding:0 8px;">: {{customer_id}}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 8px; font-weight: bold;">Place of Supply</td>
+                            <td style="padding:0 8px;">: -</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 8px; font-weight: bold;">Currency</td>
+                            <td style="padding:0 8px;">: INR (<i class="fa-solid fa-indian-rupee-sign"></i>)</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="column">
+                    <h3>Billing Details</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                        <tr>
+                            <td style="padding: 0 8px; font-weight: bold;">customer name</td>
+                            <td style="padding:0  8px;">: {{customer_name}}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 8px; font-weight: bold; display: flex;">Address</td>
+                            <td style="padding:0 8px;">: {{address}}, {{landmark}}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 8px; font-weight: bold;">State</td>
+                            <td style="padding:0 8px;">: {{state}}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 8px; font-weight: bold;">District</td>
+                            <td style="padding: 0 8px;">: {{district}}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:0 8px; font-weight: bold;">pincode</td>
+                            <td style="padding:0 8px;">: {{pincode}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="left-radius">#</th>
+                            <th class="description">Description</th>
+                            <th>Status</th>
+                            <th>Net Price</th>
+                            <th>Quantity</th>
+                            <th class="right-radius">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{products}}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <div style="text-align: left;">
+                                        <p>The goods mentioned above were sold by {{company_name}} <br> on
+                                            {{invoice_date}}
+                                            for rupees <i class="fa-solid fa-indian-rupee-sign"></i> {{total_amount}}.
+                                        </p>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                                            <tr>
+                                                <td style="padding:0 8px; font-weight: bold;">Subtotal</td>
+                                                <td style="padding:0 8px;">: <i
+                                                        class="fa-solid fa-indian-rupee-sign"></i> {{subtotal}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:0 8px; font-weight: bold;">CGST</td>
+                                                <td style="padding:0 8px;">: <i
+                                                        class="fa-solid fa-indian-rupee-sign"></i> {{CGST}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:0 8px; font-weight: bold;">IGST</td>
+                                                <td style="padding:0 8px;">: <i
+                                                        class="fa-solid fa-indian-rupee-sign"></i> {{IGST}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:0 8px; font-weight: bold;">SGST</td>
+                                                <td style="padding:0 8px;">: <i
+                                                        class="fa-solid fa-indian-rupee-sign"></i> {{SGST}}</td>
+                                            </tr>
+                                            <tr class="bold-text">
+                                                <td style="padding:10px; font-weight: bold;">Total</td>
+                                                <td style="padding:10px;">: <i
+                                                        class="fa-solid fa-indian-rupee-sign"></i> {{total_amount}}</td>
+                                            </tr>
+                                        </table>
+                                        <div class="qr-section">
+                                            <div>
+                                                <img src="assets/img/qr-code.png" alt="" class="qrcode">
+                                            </div>
+                                            <div class="code">
+                                                <span>(secure QR)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p class="footer-p">this is a secure temper-resistant a document a signature is not necessary and it can
+                    be authenticated the QR code.</p>
+                <h6 class="position-text">allurance.co</h6>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

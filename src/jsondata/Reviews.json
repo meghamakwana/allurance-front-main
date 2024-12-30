@@ -1,0 +1,16 @@
+{
+    "Reviews" : [
+        {
+            "Reviews" : "Reviews",
+            "Rating" : " rating",
+            "ReviewImg" : "/img/review-img-1.png",
+            "ClassyRoundDiamondRing" : "classy round diamond ring",
+            "ProductListImgThree" : "/img/product-list-img-3.png",
+            "StarIcon" : "fa-solid fa-star",
+            "PText" : "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
+            "CertifiedBuyer" : "Certified Buyer",
+            "Date" : "23 feb, 2024",
+            "Edit" : "Edit"
+        }
+    ]
+}

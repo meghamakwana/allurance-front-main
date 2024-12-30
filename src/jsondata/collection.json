@@ -1,0 +1,13 @@
+{
+    "Collection" : [
+        {
+            "CollectionImgOne" : "/img/new-collection-1.png",
+            "CollectionImgTwo" : "/img/new-collection-2.png",
+            "CollectionImgThree" : "/img/new-collection-3.png",
+            "NewCollection" : "New Collection",
+            "Jewelry" : "jewelry",
+            "Bracelate" : "bracelate",
+            "SeeMore" : "SEE MORE"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "Support" : [
+        {
+            "DeliveryImg" : "/img/delivery.png",
+            "DeliveryText" : "Free Delivery",
+            "SupportImg" : "/img/support.png",
+            "SupportText" : "24x7 Support",
+            "CashbackImg" : "/img/cashback.png",
+            "CashbackText" : "Money Back Guarantee",
+            "QualityImg" : "/img/quality.png",
+            "QualityText" : "High Quality"
+        }
+    ]
+}
