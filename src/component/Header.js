@@ -12,6 +12,7 @@ function Header() {
   const [categories, setCategories] = useState([]);
   const [decodedToken, setDecodedToken] = useState(null);
   const [searchInput, setSearchInput] = useState('');
+  const [isUser, setIsUser] = useState(false);
 
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
@@ -42,10 +43,15 @@ function Header() {
 
   useEffect(() => {
     const decodedlogtkn = getDecodedToken();
+    // console.log(decodedlogtkn);
     setDecodedToken(decodedlogtkn);
-  }, []);
+    let isUserLoggedIn = false;
+    isUserLoggedIn = decodedlogtkn && decodedlogtkn.data.length > 0 && decodedlogtkn.data[0].id > 0;
+    setIsUser(isUserLoggedIn);
+  },[])
 
-  const isUserLoggedIn = decodedToken && decodedToken.data && decodedToken.data.id;
+  console.log(isUser)
+  console.log(decodedToken);
 
   useEffect(() => {
     const header = document.getElementById('navbar');
@@ -248,7 +254,7 @@ function Header() {
                             </Link>
                           </li>
 
-                          {isUserLoggedIn ?
+                          {isUser ?
                             <li className="nav-item" style={{ marginTop: '10px' }}>
                               <Link href="/profile">
                                 <img src={item.User} alt="" />

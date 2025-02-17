@@ -1,7 +1,7 @@
 // src/utils/frontendAPIEndPoints.js
 
 // .env variables
-const apiUrl = process.env.NEXT_PUBLIC_API_URL; // 'http://localhost:3032/api';
+const apiUrl = 'http://localhost:3000/api'; // process.env.NEXT_PUBLIC_API_URL;
 
 // Home Page <PageName_SectionName>
 export const FRONTEND_DESKTOPMASTHEAD = `${apiUrl}/desktopmasthead`;
@@ -16,6 +16,7 @@ export const FRONTEND_CART_SYNC_ENDPOINT = `${apiUrl}/cart/sync`;
 export const FRONTEND_CHECKOUT_ENDPOINT = `${apiUrl}/checkout`;
 export const FRONTEND_CHECKOUT_SYNC_ENDPOINT = `${apiUrl}/checkout/sync`;
 export const FRONTEND_USER_ADDRESSES_ENDPOINT = `${apiUrl}/offlinesales/invoice/searchaddress`;
+export const FRONTEND_GET_BY_PINCODE = `${apiUrl}/myaddress/getByPinCode`;
 export const FRONTEND_CONTACTUS = `${apiUrl}/contactus`;
 export const FRONTEND_REVIEW = `${apiUrl}/rating`;
 export const FRONTEND_PRODUCT_REVIEW = `${apiUrl}/rating/product`;
@@ -26,6 +27,8 @@ export const FRONTEND_NOTIFICATIONS = `${apiUrl}/users/notifications`;
 export const FRONTEND_REFERRAL = `${apiUrl}/myreferral`;
 export const FRONTEND_GIFTCARD = `${apiUrl}/mygiftcard`;
 export const FRONTEND_USERS = `${apiUrl}/users`;
+export const FRONTEND_VERIFY_OTP_AND_SIGNUP = `${apiUrl}/users/verifyOtpAndSignup`;
+export const FRONTEND_SENDOTP = `${apiUrl}/users/sendotp`;
 export const FRONTEND_PROFILE = `${apiUrl}/users/frontendprofile`;
 export const FRONTEND_LOGIN = `${apiUrl}/users/login/frontuserslogin`;
 export const FRONTEND_FORGOTPASSWORD = `${apiUrl}/users/forgotpassword`;

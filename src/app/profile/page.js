@@ -33,7 +33,7 @@ function Profile() {
 
   useEffect(() => {
     const decodedlogtkn = getDecodedToken();
-    if (!decodedlogtkn || !decodedlogtkn.data || !decodedlogtkn.data.id) {
+    if (!decodedlogtkn || !decodedlogtkn.data || !decodedlogtkn.data[0].id) {
       enqueueSnackbar("Something Wrong! Please login to continue access", { variant: 'error' });
       router.push('/login');
       return;
@@ -41,7 +41,7 @@ function Profile() {
     setDecodedToken(decodedlogtkn);
   }, []);
 
-  const isUserLoggedIn = decodedToken && decodedToken.data && decodedToken.data.id;
+  const isUserLoggedIn = decodedToken && decodedToken.data && decodedToken.data[0].id;
 
   const [formData, setFormData] = useState(initialFormData);
 
@@ -60,6 +60,7 @@ function Profile() {
   const getMyProfileData = async () => {
     try {
       const response = await ManageAPIsData(`${FRONTEND_USERS}?id=${isUserLoggedIn}`, 'GET', '', user_token_data);
+      console.log(response);
       if (!response.ok) {
         console.error("Error fetching data:", response.statusText);
         return;
@@ -69,7 +70,6 @@ function Profile() {
       if (responseData) {
         const formattedAnniversary = responseData.data.anniversary ? fetchFormatDate(responseData.data.anniversary) : null;
         const formattedDateOfBirth = responseData.data.date_of_birth ? fetchFormatDate(responseData.data.date_of_birth) : null;
-
         setFormData({
           // user_id: '',
           first_name: responseData.data.first_name,
@@ -184,6 +184,7 @@ function Profile() {
     } else {
       try {
         const response = await ManageAPIsData(`${FRONTEND_PROFILE}?id=${isUserLoggedIn}`, 'PUT', formData, user_token_data);
+        console.log(response)
         if (!response.ok) {
           const responseData1 = await response.json();
           setErrorMessage(responseData1.error);
