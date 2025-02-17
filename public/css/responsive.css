@@ -143,6 +143,9 @@
     }
 
     /* footer */
+    .top-footer > .container{
+        margin: 0px 20px;
+    }
     #footer h2,
     h3,
     h6 {
@@ -1116,7 +1119,16 @@
 @media(min-width:541px) and (max-width:768px)
 
 /*************************** IPAD PORTRAIT ***********************/
-    {}
+    {
+        /* footer */
+        .top-footer .container .row{
+            display: flex !important;
+            flex-direction: row !important;
+        }
+        .top-footer > .container{
+            margin: 0px 20px;
+        }
+    }
 
 @media(min-width:769px) and (max-width:1024px)
 

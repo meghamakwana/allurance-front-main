@@ -11,8 +11,10 @@ import { FRONTEND_MYADDRESS } from "../../utils/frontendAPIEndPoints";
 import { getDecodedToken, getOnlyToken, getStateData, getDistrictData, getPincodeData } from "../../utils/frontendCommonFunction";
 import { ManageAPIsData } from '../../utils/commonFunction';
 import { enqueueSnackbar } from 'notistack';
+import { useRouter } from 'next/navigation';
 
 function Address() {
+  const router = useRouter();
   const [listAddressData, getAddressData] = useState([]);
   const [selectedType, setSelectedType] = useState(1);
   const [isEditing, setIsEditing] = useState(false);
@@ -28,7 +30,7 @@ function Address() {
 
   useEffect(() => {
     const decodedlogtkn = getDecodedToken();
-    if (!decodedlogtkn || !decodedlogtkn.data || !decodedlogtkn.data.id) {
+    if (!decodedlogtkn || !decodedlogtkn.data || !decodedlogtkn.data[0].id) {
       enqueueSnackbar("Something Wrong! Please login to continue access", { variant: 'error' });
       router.push('/login');
       return;
@@ -36,7 +38,7 @@ function Address() {
     setDecodedToken(decodedlogtkn);
   }, []);
 
-  const isUserLoggedIn = decodedToken && decodedToken.data && decodedToken.data.id;
+  const isUserLoggedIn = decodedToken && decodedToken.data && decodedToken.data[0].id;
 
 
   // Fetch Address Data

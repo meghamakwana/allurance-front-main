@@ -198,7 +198,16 @@ textarea::placeholder {
 } */
 
 .productList .product-img-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
+}
+
+.productList .product-img-section a{
+    display: flex;
+    justify-content: center;
 }
 
 .productList .wishlist {
@@ -276,8 +285,10 @@ textarea::placeholder {
 .productList .price {
 
     display: flex;
-    margin: 0 50px;
-    justify-content: space-around;
+    /* margin: 0 50px; */
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
 }
 
 .productList .price h4 {
@@ -1008,6 +1019,12 @@ input {
 
 .modal .row {
     display: flex;
+    gap: 10px;
+}
+
+.productList .row{
+    display: flex;
+    gap: 20px;
 }
 
 .productList .modal .row {
@@ -1491,8 +1508,8 @@ input {
 
     border-radius: 5px;
     padding: 25px;
-    background: #f4f4f4;
-    border: none;
+    background: #ffffff;
+    /* border: none; */
 }
 
 #addressSection #phone {
@@ -1720,6 +1737,57 @@ input {
     background-color: #F3E9EA;
     position: relative;
 }
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.translateCenter{
+    transform: translate(-50%, -50%);
+}
+.translateX-50{
+    transform: translateX(-50%);
+}
+.translateY-50{
+    transform: translateY(-50%);
+}
+.translateX-0{
+    transform: translateX(0%);
+}
+.translateY-0{
+    transform: translateY(0%);
+}
+.top-half{
+    top: 50%;
+}
+.left-half{
+    left: 50%;
+}
+.right-half{
+    right: 50%;
+}
+.bottom-half{
+    bottom: 50%;
+}
+.top-0{
+    top: 0;
+}
+.right-0{
+    right: 0;
+}
+.left-0{
+    left: 0;
+}
+.bottom-0{
+    bottom: 0;
+}
+
 
 #referEarn .refer-earn-img {
     position: absolute;

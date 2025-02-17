@@ -1,4 +1,4 @@
-'use client'
+'use client';
 /* eslint-disable perfectionist/sort-imports */
 import 'src/global.css';
 // i18n
@@ -51,6 +51,10 @@ export default function RootLayout({ children, session }) {
         <head>
           <link
             rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+          />
+          <link
+            rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
           />
           <link
@@ -97,38 +101,38 @@ export default function RootLayout({ children, session }) {
         </head>
         <body>
           <SessionProvider session={session}>
-          <UserProvider>
-            {/* <AuthProvider> */}
+            <UserProvider>
+              {/* <AuthProvider> */}
               {/* PERMISSION PROVIDER ADDED EXTERNALLY FOR LISTING PURPOSE BY ROLES  */}
               {/* <PermissionProvider defaultSettings={{ permissions: [] }}> */}
-                <CartProvider>
-                  <LocalizationProvider>
-                    <SettingsProvider
-                      defaultSettings={{
-                        themeMode: 'light', // 'light' | 'dark'
-                        themeDirection: 'ltr', //  'rtl' | 'ltr'
-                        themeContrast: 'default', // 'default' | 'bold'
-                        themeLayout: 'vertical', // 'vertical' | 'horizontal' | 'mini'
-                        themeColorPresets: 'default', // 'default' | 'cyan' | 'purple' | 'blue' | 'orange' | 'red'
-                        themeStretch: false,
-                      }}
-                    >
-                      <ThemeProvider>
-                        <MotionLazy>
-                          <SnackbarProvider>
-                            {/* <CheckoutProvider> */}
-                              <SettingsDrawer />
-                              <ProgressBar />
-                              {children}
-                            {/* </CheckoutProvider> */}
-                          </SnackbarProvider>
-                        </MotionLazy>
-                      </ThemeProvider>
-                    </SettingsProvider>
-                  </LocalizationProvider>
-                </CartProvider>
+              <CartProvider>
+                <LocalizationProvider>
+                  <SettingsProvider
+                    defaultSettings={{
+                      themeMode: 'light', // 'light' | 'dark'
+                      themeDirection: 'ltr', //  'rtl' | 'ltr'
+                      themeContrast: 'default', // 'default' | 'bold'
+                      themeLayout: 'vertical', // 'vertical' | 'horizontal' | 'mini'
+                      themeColorPresets: 'default', // 'default' | 'cyan' | 'purple' | 'blue' | 'orange' | 'red'
+                      themeStretch: false,
+                    }}
+                  >
+                    <ThemeProvider>
+                      <MotionLazy>
+                        <SnackbarProvider>
+                          {/* <CheckoutProvider> */}
+                          <SettingsDrawer />
+                          <ProgressBar />
+                          {children}
+                          {/* </CheckoutProvider> */}
+                        </SnackbarProvider>
+                      </MotionLazy>
+                    </ThemeProvider>
+                  </SettingsProvider>
+                </LocalizationProvider>
+              </CartProvider>
               {/* </PermissionProvider> */}
-            {/* </AuthProvider> */}
+              {/* </AuthProvider> */}
             </UserProvider>
           </SessionProvider>
         </body>
