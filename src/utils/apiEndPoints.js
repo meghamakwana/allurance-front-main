@@ -1,7 +1,7 @@
 // src/utils/apiEndPoint.js
 
 // .env variables
-const apiUrl = process.env.NEXT_PUBLIC_API_URL; // 'http://localhost:3032/api';
+const apiUrl = 'http://localhost:3000/api'; // process.env.NEXT_PUBLIC_API_URL;
 
 // RESIN TYPE MODULE
 export const RESINTYPE_ENDPOINT = `${apiUrl}/resintype`; // Endpoint to manage resin type data

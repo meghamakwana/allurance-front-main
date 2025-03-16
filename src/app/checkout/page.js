@@ -10,7 +10,7 @@ import { useRouter } from 'src/routes/hooks';
 import { payment } from 'src/action/ServerActions';
 import { getDecodedToken, formatCartCheckoutNo, deleteCheckoutData, getOnlyToken, getAddressData, getStateData, getDistrictData, getPincodeData, updateDefaultAddressData, placeorderData, generateDummyTxnId } from '../../utils/frontendCommonFunction';
 import { enqueueSnackbar } from 'notistack';
-import { FRONTEND_MYADDRESS } from 'src/utils/frontendAPIEndPoints';
+import { FRONTEND_GET_BY_PINCODE, FRONTEND_MYADDRESS } from 'src/utils/frontendAPIEndPoints';
 import Link from 'next/link';
 import { ManageAPIsData } from 'src/utils/commonFunction';
 import Cookies from 'js-cookie';
@@ -23,7 +23,7 @@ function Checkout() {
   const { cartProducts, selectedAddress, discountedAmount, FinalAmount, FinalTax, updateFinalTax, CGST, IGST, SGST, getRowID } = useCart();
 
   const decodedlogtkn = getDecodedToken();
-  const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data.id : '';
+  const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data[0].id : '';
 
   useEffect(() => {
     const discount = Cookies.get('discount');
@@ -88,6 +88,35 @@ function Checkout() {
 
     }
   }, [selectedAddress]);
+
+  const getByPinCode = async (pincode) => {
+    console.log("first_name");
+    console.log(pincode)
+    let errors = {};
+    let payload = {pincode: pincode};
+    if(pincode.length !== 6) {
+      errors.new_pincode = 'Please enter valid pincode';
+      return;
+    }
+
+    try{
+      let response = await ManageAPIsData(FRONTEND_GET_BY_PINCODE, 'POST', payload);
+      let responseData = await response.json();
+      if(responseData.error) {
+        enqueueSnackbar(responseData.error, { variant: 'error' });
+      } else {
+        setFormData({
+          ...formData,
+          pincode: responseData.data[0].Pincode,
+          state: responseData.data[0].StateName,
+          district: responseData.data[0].District
+        });
+      }
+    }
+    catch(error) {
+      console.error("Error fetching data:", error);
+    }
+  }
 
   const handleInputChange = async (e) => {
     const { name, value, checked, type } = e.target;
@@ -696,7 +725,6 @@ function Checkout() {
 
                 <div className="col-12 d-flex py-3">
                   <div className="col-md-4 phone w-33">
-                    {UserLoggedInID ? (
                       <input
                         type="text"
                         className="form-control border-0 input-bg"
@@ -706,30 +734,9 @@ function Checkout() {
                         onChange={handleInputChange}
                         readOnly={!!UserLoggedInID}
                       />
-                    ) : (
-                      <select
-                        name="state"
-                        value={formData.state}
-                        onChange={handleInputChange}
-                        className={`form-control border-0 input-bg ${formErrors.state && 'is-invalid'}`}
-                        id="state"
-                      >
-                        <option value="">Select State</option>
-                        {stateData && stateData.length > 0 ? (
-                          stateData.map((cdata) => (
-                            <option key={cdata.id} value={cdata.id}>
-                              {cdata.StateName}
-                            </option>
-                          ))
-                        ) : (
-                          <option value="" disabled>No states available</option>
-                        )}
-                      </select>
-
-                    )}
                   </div>
                   <div className="col-md-4 zip-code w-33 ps-3">
-                    {UserLoggedInID ? (
+                    
                       <input
                         type="text"
                         className="form-control border-0 input-bg"
@@ -739,30 +746,9 @@ function Checkout() {
                         onChange={handleInputChange}
                         readOnly={!!UserLoggedInID}
                       />
-                    ) : (
-                      <select
-                        name="district"
-                        value={formData.district}
-                        onChange={handleInputChange}
-                        className={`form-control border-0 input-bg ${formErrors.district && 'is-invalid'}`}
-                        id="district"
-                      >
-                        <option value="">Select District</option>
-                        {districtData && districtData.length > 0 ? (
-                          districtData.map((ddata) => (
-                            <option key={ddata.id} value={ddata.District}>
-                              {ddata.District}
-                            </option>
-                          ))
-                        ) : (
-                          <option value="" disabled>No districts available</option>
-                        )}
-                      </select>
-                    )}
                   </div>
 
-                  <div className="col-md-4 zip-code w-33 ps-3">
-                    {UserLoggedInID ? (
+                  <div className="col-md-4 zip-code w-33 ps-3 relative">
                       <input
                         type="number"
                         className="form-control border-0 input-bg"
@@ -772,26 +758,9 @@ function Checkout() {
                         onChange={handleInputChange}
                         readOnly={!!UserLoggedInID}
                       />
-                    ) : (
-                      <select
-                        name="pincode"
-                        value={formData.pincode}
-                        onChange={handleInputChange}
-                        className={`form-control border-0 input-bg ${formErrors.pincode && 'is-invalid'}`}
-                        id="pincode"
-                      >
-                        <option value="">Select Pincode</option>
-                        {pincodeData && pincodeData.length > 0 ? (
-                          pincodeData.map((ddata) => (
-                            <option key={ddata.id} value={ddata.Pincode}>
-                              {ddata.Pincode}
-                            </option>
-                          ))
-                        ) : (
-                          <option value="" disabled>No pincode available</option>
-                        )}
-                      </select>
-                    )}
+                      <div className='cursor-pointer absolute right-0 top-half translateCenter'>
+                      <i onClick={()=>getByPinCode(formData.pincode)} class="bi bi-search"></i>
+                      </div>
                   </div>
 
                 </div>
@@ -1121,7 +1090,12 @@ function Checkout() {
                 </div>
 
                 <div className="mb-3">
-                  <label htmlFor="new_district" className="form-label">District:</label>
+                <label htmlFor="new_district" className="form-label">District</label>
+                  <input placeholder='Enter ...' type="number" maxLength="10" name="new_district" value={formData1.new_district} onChange={handleChange} className={`form-control ${formErrors1.new_phone && 'is-invalid'}`} id="phone1" required />
+                  <div className="invalid-feedback">
+                    {formErrors1.new_district}
+                  </div>
+                  {/* <label htmlFor="new_district" className="form-label">District:</label>
                   <select
                     name="new_district"
                     value={formData1.new_district}
@@ -1142,7 +1116,7 @@ function Checkout() {
                   </select>
                   <div className="invalid-feedback">
                     {formErrors1.new_district}
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="mb-3">

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import data from "../../jsondata/Login.json";
 import "../../../public/css/style.css";
 import "../../../public/css/responsive.css";
-import { FRONTEND_LOGIN, FRONTEND_CART_SYNC_ENDPOINT, FRONTEND_CHECKOUT_SYNC_ENDPOINT } from "../../utils/frontendAPIEndPoints";
+import { FRONTEND_CART_SYNC_ENDPOINT, FRONTEND_CHECKOUT_SYNC_ENDPOINT, FRONTEND_SENDOTP, FRONTEND_VERIFY_OTP_AND_SIGNUP } from "../../utils/frontendAPIEndPoints";
 import { ManageAPIsData } from '../../utils/commonFunction';
 import { enqueueSnackbar } from 'notistack';
 import { useRouter } from 'src/routes/hooks'
@@ -12,6 +12,11 @@ import Cookies from 'js-cookie';
 import { getDecodedToken } from '../../utils/frontendCommonFunction';
 
 function Login() {
+
+
+
+  const [gotOTP, setGotOTP] = useState(false);
+    const [showOTP, setShowOTP] = useState(false);
 
   const router = useRouter();
 
@@ -22,8 +27,8 @@ function Login() {
   };
 
   const initialFormData = {
-    email: '',
-    password: '',
+    phone: '',
+    otp: '',
   };
 
   const [formData, setFormData] = useState(initialFormData);
@@ -84,6 +89,47 @@ function Login() {
     }
   };
 
+  const handlegetOTP = async (e) => {
+    e.preventDefault();
+
+    setSubmitting(true);
+    setShowError(false);
+
+    let errors = {};
+
+    if (!formData.phone.trim()) {
+      errors.phone = 'Please enter phone';
+    } else if (formData.phone.length != 10) {
+      alert(formData.phone.length);
+      errors.phone = 'Please enter a valid phone no.';
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      setSubmitting(false);
+    } else {
+      try {
+        const response = await ManageAPIsData(FRONTEND_SENDOTP, 'POST', formData);
+        // console.log("Response:", response);
+
+        const responseData = await response.json(); // Parse JSON response
+        // console.log("Parsed Response Data:", responseData);
+        
+        if (responseData.error) {
+          enqueueSnackbar(responseData.error, { variant: 'error' });
+        } else {
+          setGotOTP(true);
+          enqueueSnackbar(responseData.message, { variant: 'success' });
+        }
+        setSubmitting(false);}
+        catch (error) {
+          console.error("Error fetching data:", error);
+          setSubmitting(false);
+        }
+    }
+  };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -92,14 +138,14 @@ function Login() {
 
     let errors = {};
 
-    if (!formData.email.trim()) {
-      errors.email = 'Please enter email';
-    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      errors.email = 'Please enter a valid email address';
+    if (!formData.phone.trim()) {
+      errors.phone = 'Please enter phone';
+    } else if (formData.phone.length !== 10) {
+      errors.phone = 'Please enter a valid phone no.';
     }
 
-    if (!formData.password) {
-      errors.password = 'Please enter password';
+    if (!formData.otp) {
+      errors.otp = 'Please enter otp';
     }
 
     if (Object.keys(errors).length > 0) {
@@ -107,7 +153,7 @@ function Login() {
       setSubmitting(false);
     } else {
       try {
-        const response = await ManageAPIsData(FRONTEND_LOGIN, 'POST', formData);
+        const response = await ManageAPIsData(FRONTEND_VERIFY_OTP_AND_SIGNUP, 'POST', formData);
         // console.log("Response:", response);
 
         const responseData = await response.json(); // Parse JSON response
@@ -118,7 +164,9 @@ function Login() {
         } else {
 
           // sessionStorage.setItem('logtk', responseData.accessToken);
-          Cookies.set('logtk', responseData.accessToken, { expires: 1/3 }); // Set cookie to expire after 8 hours
+          console.log(responseData)
+          Cookies.set('logtk', responseData.accessToken, { expires: 1/3 }); 
+          console.log(Cookies.get('logtk'))// Set cookie to expire after 8 hours
           if(localStorage.getItem('Alluranceorder')) {
             cartSync();
           }
@@ -162,7 +210,7 @@ function Login() {
                 <img src={item.LoginImg} alt="" />
               </div>
               <div className="col-md-4 col-sm-12">
-                <form onSubmit={handleSubmit} className="needs-validation" noValidate>
+                <form onSubmit={gotOTP ? (formData.otp.length === 0 ? handlegetOTP : handleSubmit) : handlegetOTP} className="needs-validation" noValidate>
                   <h1>{item.WelcomeBack}</h1>
                   <p>{item.Title}</p>
                   <div className="login-form-group">
@@ -172,9 +220,9 @@ function Login() {
                           <i className="fas fa-envelope" />
                         </span>
                       </div>
-                      <input type="email" name="email" placeholder='Enter Email' value={formData.email} onChange={handleChange} className={`form-control ${formErrors.email && 'is-invalid'}`} id="email" required />
+                      <input type="text" name="phone" placeholder='Enter Phone' value={formData.phone} onChange={handleChange} className={`form-control ${formErrors.phone && 'is-invalid'}`} id="phone" required />
                       <div className="invalid-feedback">
-                        {formErrors.email}
+                        {formErrors.phone}
                       </div>
                     </div>
                   </div>
@@ -185,11 +233,11 @@ function Login() {
                           <i className="fas fa-lock" />
                         </span>
                       </div>
-                      <input type={showPassword ? 'text' : 'password'} name="password" placeholder='Enter Password' value={formData.password} onChange={handleChange} className={`form-control ${formErrors.password && 'is-invalid'}`} id="password" required />
+                      <input type="text" name="otp" placeholder='Enter OTP' value={formData.otp} onChange={handleChange} className={`form-control ${formErrors.otp && 'is-invalid'}`} id="otp" required />
                       <div className="invalid-feedback">
-                        {formErrors.password}
+                        {formErrors.otp}
                       </div>
-                      <div className="input-group-append">
+                      {/* <div className="input-group-append">
                         <button
                           className="btn btn-outline-secondary"
                           type="button"
@@ -198,11 +246,11 @@ function Login() {
                         >
                           <i className={showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'} id="togglePasswordIcon" />
                         </button>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   <Link href="/forgotpassword">{item.ForgotPassword}</Link>
-                  <button type="submit" className="btn login-page-submit-btn" disabled={submitting}>{submitting ? 'Submitting...' : 'Submit'}</button>
+                  <button type="submit" className="btn login-page-submit-btn" disabled={submitting}>{submitting ? 'Sending...' : (gotOTP ? (formData.otp.length === 0 ? 'Resend OTP': 'Verify and Register') : 'Get OTP')}</button>
                   <div className=''>{showError && (<p className="text-danger mt-3" style={{ padding: '0px 20px 10px' }}>{errorMessage}</p>)}</div>
                   <Link className="login-registration" href="/register">
                     {item.Register}

@@ -30,6 +30,7 @@ export const getDecodedToken = () => {
     try {
         const token = Cookies.get('logtk')
         if (!token) return '';
+        // console.log(token)
 
         return decodeJwtPayload(token);
     } catch (error) {
