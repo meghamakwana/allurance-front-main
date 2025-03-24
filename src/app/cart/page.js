@@ -32,7 +32,7 @@ function Cart() {
   const [coupons, setAllCoupons] = useState([]);
 
   const decodedlogtkn = getDecodedToken();
-  const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data.id : '';
+  const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data[0].id : '';
 
   const [categories, setCategories] = useState([]);
   const [stateData, setStateData] = useState([]);

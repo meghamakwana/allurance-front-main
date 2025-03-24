@@ -59,7 +59,7 @@ function productlist() {
     setMainImage(newImageUrl);
   };
   const decodedlogtkn = getDecodedToken();
-  const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data.id : '';
+  const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data[0].id : '';
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);

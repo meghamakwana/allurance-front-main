@@ -12,7 +12,7 @@ export const UserContext = createContext();
 export const UserProvider = ({ children }) => {
     const user_token_data = getOnlyToken();
     const decodedlogtkn = getDecodedToken();
-    const isUserLoggedIn = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data.id : '';
+    const isUserLoggedIn = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data[0].id : '';
 
     const [user, setUser] = useState(null);
     const searchParams = useSearchParams(); // Use useSearchParams for query parameters

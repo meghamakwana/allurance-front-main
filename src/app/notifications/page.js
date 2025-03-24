@@ -21,14 +21,14 @@ function Notifications() {
 
   useEffect(() => {
     const decodedToken = getDecodedToken();
-    if (!decodedToken || !decodedToken.data || !decodedToken.data.id) {
+    if (!decodedToken || !decodedToken.data || !decodedToken.data[0].id) {
       enqueueSnackbar("Something Wrong! Please login to continue access", { variant: 'error' });
       router.push('/login');
       return;
     }
     setDecodedToken(decodedToken);
   }, [router]);
-  const isUserLoggedIn = decodedToken?.data?.id;
+  const isUserLoggedIn = decodedToken?.data[0]?.id;
 
   // Fetch Notification Data
   const fetchData = useCallback(async () => {

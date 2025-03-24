@@ -55,7 +55,7 @@ function Footer() {
     fetchData();
   }, [fetchData]);
 
-  const isUserLoggedIn = decodedToken && decodedToken.data && decodedToken.data.id;
+  const isUserLoggedIn = decodedToken && decodedToken.data && decodedToken.data[0].id;
 
   return (
     <>

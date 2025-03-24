@@ -24,7 +24,7 @@ function ShopWith() {
   const [mainImage, setMainImage] = useState(selectedProduct?.images?.[0]?.url);
 
   const decodedlogtkn = getDecodedToken();
-  const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data.id : '';
+  const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data[0].id : '';
 
   const increment = () => {
     setCount(count + 1);

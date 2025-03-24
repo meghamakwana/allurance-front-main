@@ -108,7 +108,7 @@ export const productsHandleImageError = (event) => { event.target.src = '/img/pl
 // Set Wishlist Class
 export const setWishlistClass = async (pid) => {
     const decodedlogtkn = getDecodedToken();
-    const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data.id : '';
+    const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data[0].id : '';
     var wdata = await getMyWishlistData(UserLoggedInID);
     return wdata.some(wd => wd.id === pid) ? 'fas' : 'far';
 };
@@ -202,7 +202,7 @@ export const convertImageToBase64 = (url) => {
 export const addToCartFn = async (pstock, pid, qty) => {
 
     const decodedlogtkn = getDecodedToken();
-    const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data.id : '';
+    const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data[0].id : '';
     if (qty == 0) { qty = 1; }
 
     try {
@@ -248,7 +248,7 @@ export const addToCartFn = async (pstock, pid, qty) => {
 export const addToWishlistFn = async (pid) => {
 
     const decodedlogtkn = getDecodedToken();
-    const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data.id : '';
+    const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data[0].id : '';
     const token = getOnlyToken();
 
     try {

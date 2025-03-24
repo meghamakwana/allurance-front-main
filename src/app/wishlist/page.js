@@ -20,7 +20,7 @@ function Wishlist() {
 
   useEffect(() => {
     const decodedToken = getDecodedToken();
-    if (!decodedToken || !decodedToken.data || !decodedToken.data.id) {
+    if (!decodedToken || !decodedToken.data || !decodedToken.data[0].id) {
       enqueueSnackbar("Something went wrong! Please log in to continue.", { variant: 'error' });
       router.push('/login');
       return;
@@ -28,7 +28,7 @@ function Wishlist() {
     setDecodedToken(decodedToken);
   }, [router]);
 
-  const isUserLoggedIn = decodedToken?.data?.id;
+  const isUserLoggedIn = decodedToken?.data[0]?.id;
 
   // Fetch Wishlist Data
   const fetchData = useCallback(async () => {

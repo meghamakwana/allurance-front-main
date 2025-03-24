@@ -20,7 +20,7 @@ function AddressPopup() {
     const user_token_data = getOnlyToken();
 
     const decodedlogtkn = getDecodedToken();
-    const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data.id : '';
+    const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data[0].id : '';
 
     // Fetch Address
     const fetchData = useCallback(async () => {

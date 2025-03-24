@@ -65,7 +65,7 @@ function Login() {
   const cartSync = async (e) => {
     try {
       const decodedlogtkn = getDecodedToken();
-      const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data.id : '';
+      const UserLoggedInID = decodedlogtkn && decodedlogtkn.data ? decodedlogtkn.data[0].id : '';
       
       var formData1 = {
         userID: UserLoggedInID,

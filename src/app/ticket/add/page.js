@@ -19,7 +19,7 @@ function TicketAdd() {
 
   useEffect(() => {
     const decodedlogtkn = getDecodedToken();
-    if (!decodedlogtkn || !decodedlogtkn.data || !decodedlogtkn.data.id) {
+    if (!decodedlogtkn || !decodedlogtkn.data || !decodedlogtkn.data[0].id) {
       enqueueSnackbar("Something Wrong! Please login to continue access", { variant: 'error' });
       router.push('/login');
       return;
@@ -27,7 +27,7 @@ function TicketAdd() {
     setDecodedToken(decodedlogtkn);
   }, []);
 
-  const isUserLoggedIn = decodedToken && decodedToken.data && decodedToken.data.id;
+  const isUserLoggedIn = decodedToken && decodedToken.data && decodedToken.data[0].id;
 
   const [listSubjectData, getSubjectData] = useState([]);
 
@@ -59,7 +59,7 @@ function TicketAdd() {
       setFormData(prevData => ({
         ...prevData,
         // email: decodedToken.data.email,
-        user_id: decodedToken.data.id,
+        user_id: decodedToken.data[0].id,
       }));
     }
   }, [isUserLoggedIn]);

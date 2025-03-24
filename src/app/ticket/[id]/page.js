@@ -27,7 +27,7 @@ function TicketDetail() {
 
   useEffect(() => {
     const decodedlogtkn = getDecodedToken();
-    if (!decodedlogtkn || !decodedlogtkn.data || !decodedlogtkn.data.id) {
+    if (!decodedlogtkn || !decodedlogtkn.data || !decodedlogtkn.data[0].id) {
       enqueueSnackbar("Something Wrong! Please login to continue access", { variant: 'error' });
       router.push('/login');
       return;
@@ -35,7 +35,7 @@ function TicketDetail() {
     setDecodedToken(decodedlogtkn);
   }, []);
 
-  const isUserLoggedIn = decodedToken && decodedToken.data && decodedToken.data.id;
+  const isUserLoggedIn = decodedToken && decodedToken.data && decodedToken.data[0].id;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -171,7 +171,7 @@ function TicketDetail() {
   const handleCloseTicket = async () => {
     const data = {
       ticket_id: id,
-      user_id: decodedToken.data.id
+      user_id: decodedToken.data[0].id
     }
 
     const res = await ManageAPIsData(FRONTEND_TICKET_CLOSE, 'POST', data, userToken);

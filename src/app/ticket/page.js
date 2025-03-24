@@ -20,7 +20,7 @@ function TicketList() {
 
   useEffect(() => {
     const decodedlogtkn = getDecodedToken();
-    if (!decodedlogtkn || !decodedlogtkn.data || !decodedlogtkn.data.id) {
+    if (!decodedlogtkn || !decodedlogtkn.data || !decodedlogtkn.data[0].id) {
       enqueueSnackbar("Something Wrong! Please login to continue access", { variant: 'error' });
       router.push('/login');
       return;
@@ -28,7 +28,7 @@ function TicketList() {
     setDecodedToken(decodedlogtkn);
   }, []);
 
-  const isUserLoggedIn = decodedToken && decodedToken.data && decodedToken.data.id;
+  const isUserLoggedIn = decodedToken && decodedToken.data && decodedToken.data[0].id;
 
 
   // Fetch Ticket List
