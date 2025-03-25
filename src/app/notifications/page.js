@@ -17,6 +17,10 @@ function Notifications() {
     notification_order_delivery_email: 'off',
     notification_order_shipping_email: 'off',
     notification_new_order_email: 'off',
+    transactional_email: 'off',
+    transactional_sms: 'off',
+    promotional_email: 'off',
+    promotional_sms: 'off'
   });
 
   useEffect(() => {
@@ -52,6 +56,10 @@ function Notifications() {
         notification_order_delivery_email: getMetaValue('notification_order_delivery_email'),
         notification_order_shipping_email: getMetaValue('notification_order_shipping_email'),
         notification_new_order_email: getMetaValue('notification_new_order_email'),
+        transactional_email: getMetaValue('transactional_email'),
+        transactional_sms: getMetaValue('transactional_sms'),
+        promotional_email: getMetaValue('promotional_email'),
+        promotional_sms: getMetaValue('promotional_sms'),
       };
       setFormData(updatedFormData);
     }
@@ -116,6 +124,50 @@ function Notifications() {
                       <span className="slider" />
                     </label>
                     Order Delivery Email
+                  </div>
+                  <div className="notify">
+                    <label className="switch flat">
+                      <input
+                        type="checkbox"
+                        checked={formData.transactional_email === 'on'}
+                        onChange={(event) => handleCheckboxChange(event, 'transactional_email')}
+                      />
+                      <span className="slider" />
+                    </label>
+                    Transactional Email
+                  </div>
+                  <div className="notify">
+                    <label className="switch flat">
+                      <input
+                        type="checkbox"
+                        checked={formData.transactional_sms === 'on'}
+                        onChange={(event) => handleCheckboxChange(event, 'transactional_sms')}
+                      />
+                      <span className="slider" />
+                    </label>
+                    Transactional SMS
+                  </div>
+                  <div className="notify">
+                    <label className="switch flat">
+                      <input
+                        type="checkbox"
+                        checked={formData.promotional_email === 'on'}
+                        onChange={(event) => handleCheckboxChange(event, 'promotional_email')}
+                      />
+                      <span className="slider" />
+                    </label>
+                    Promotional Email
+                  </div>
+                  <div className="notify">
+                    <label className="switch flat">
+                      <input
+                        type="checkbox"
+                        checked={formData.promotional_sms === 'on'}
+                        onChange={(event) => handleCheckboxChange(event, 'promotional_sms')}
+                      />
+                      <span className="slider" />
+                    </label>
+                    Promotional SMS
                   </div>
                 </div>
               </div>
