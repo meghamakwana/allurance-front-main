@@ -1,7 +1,7 @@
 // src/utils/frontendAPIEndPoints.js
 
 // .env variables
-const apiUrl = 'http://localhost:3000/api'; // process.env.NEXT_PUBLIC_API_URL;
+const apiUrl = process.env.NEXT_PUBLIC_API_URL; // process.env.NEXT_PUBLIC_API_URL;
 
 // Home Page <PageName_SectionName>
 export const FRONTEND_DESKTOPMASTHEAD = `${apiUrl}/desktopmasthead`;
@@ -56,3 +56,4 @@ export const FRONTEND_DISTRICT = `${apiUrl}/others/state_district/endpoint2`;
 export const FRONTEND_PINCODE = `${apiUrl}/others/state_district/endpoint3`;
 export const FRONTEND_SITE_SETTING = `${apiUrl}/others/sitesetting`;
 export const FRONTEND_EMAIL = `${apiUrl}/email`;
+export const FRONTEND_UNSUBSCRIBE = `${apiUrl}/users/unsubscribe`;
